@@ -1,0 +1,32 @@
+{
+  "name": "filmplayer",
+  "version": "1.0.0",
+  "description": "FilmPlayer is a video player developed on Node js. Film Player has the functionality of join videos.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Migue1m1/FilmPlayer.git"
+  },
+  "author": "Migue1m1",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Migue1m1/FilmPlayer/issues"
+  },
+  "homepage": "https://github.com/Migue1m1/FilmPlayer#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "video-stitch": "^1.4.0"
+  },
+  "devDependencies": {
+    "morgan": "^1.9.0",
+    "swagger-jsdoc": "^1.9.7",
+    "swagger-ui-express": "^2.0.15"
+  }
+}

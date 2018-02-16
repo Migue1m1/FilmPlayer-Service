@@ -1,0 +1,6 @@
+definitions:
+  Clip:
+    type: object
+    properties:
+      fileName:
+       type: string
