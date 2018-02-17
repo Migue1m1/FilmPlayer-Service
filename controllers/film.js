@@ -1,6 +1,7 @@
 'use strict'
 
 const videoStitch = require('video-stitch');
+const notification = require('../config/notification');
 
 /**
    * concatenates clips together
@@ -14,6 +15,10 @@ async function concat(clips, filmName) {
         .output('films/generated/' + filmName)
         .concat()
         .then((outputName) => {
+            notification.trigger('FilmPlayer', 'Notification', {
+                "type": "done",
+                "message": "terminando"
+            });
             return outputName;
         })
 }

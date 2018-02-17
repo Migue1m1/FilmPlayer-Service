@@ -3,6 +3,7 @@
 const film = require('../controllers/film');
 const express = require("express");
 const router = express.Router();
+const notification = require('../config/notification');
 
 /**
    * @swagger
@@ -42,11 +43,16 @@ const router = express.Router();
    *     '204':
    *       description: Films succesfully concatenated.
    */
-router.post("/concat", (req, res) => 
-    film.concat(req.body.clips, req.body.filmName)
-        .then((outputName) => { 
-            return res.status(204).json({ message: "Films succesfully concatenated"})
-        })
+router.post("/concat", (req, res) => {
+        notification.trigger('FilmPlayer', 'Notification', {
+            "type": "wait",
+            "message": "iniciando"
+        });
+        film.concat(req.body.clips, req.body.filmName)
+            .then((outputName) => { 
+                return res.status(204).json({ message: "Films succesfully concatenated"})
+            })
+    }
 );
   
 module.exports = router;
