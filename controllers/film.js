@@ -1,6 +1,7 @@
 'use strict'
 
 const videoStitch = require('video-stitch');
+const Files = require('fs-finder');
 const notification = require('../config/notification');
 
 /**
@@ -23,4 +24,14 @@ async function concat(clips, filmName) {
         })
 }
 
-module.exports = { concat };
+function findAllGenerated() {
+    var files = Files.in('films/generated').findFiles();
+
+    for (var i = 0; i < files.length; i++) {
+        files[i] = files[i].substring(files[i].lastIndexOf("\\") + 1, files[i].lastIndexOf("."));
+    }
+
+    return files;
+}
+
+module.exports = { concat, findAllGenerated };

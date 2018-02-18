@@ -7,6 +7,32 @@ const notification = require('../config/notification');
 
 /**
    * @swagger
+   * /films:
+   *   get:
+   *    summary: Get generated files
+   *    description: get generated files list
+   *    tags:
+   *     - Films
+   *    produces:
+   *     - application/json 
+   *    responses:
+   *     '200':
+   *       description: Files succesfully obtained.
+   *       type: array
+   *       items:
+   *        type: object
+   *        properties:
+   *         title:
+   *          type: string
+*/
+
+router.get("/", (req, res) => {
+    var files = film.findAllGenerated();
+    return res.status(200).json({ files: files });
+});
+
+/**
+   * @swagger
    * /films/concat:
    *   post:
    *    summary: Concat some clips
@@ -42,7 +68,8 @@ const notification = require('../config/notification');
    *    responses:
    *     '204':
    *       description: Films succesfully concatenated.
-   */
+*/
+
 router.post("/concat", (req, res) => {
         notification.trigger('FilmPlayer', 'Notification', {
             "type": "wait",

@@ -22,6 +22,7 @@
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.4",
     "express": "^4.16.2",
+    "fs-finder": "^1.8.1",
     "pusher": "^1.5.1",
     "video-stitch": "^1.4.0"
   },
