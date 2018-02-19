@@ -25,13 +25,15 @@ async function concat(clips, filmName) {
 }
 
 function findAllGenerated() {
+    var films = [];
     var files = Files.in('films/generated').findFiles();
 
     for (var i = 0; i < files.length; i++) {
         files[i] = files[i].substring(files[i].lastIndexOf("\\") + 1, files[i].lastIndexOf("."));
+        films[i] = { title: files[i] };
     }
 
-    return files;
+    return films;
 }
 
 module.exports = { concat, findAllGenerated };

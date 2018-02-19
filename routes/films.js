@@ -27,8 +27,8 @@ const notification = require('../config/notification');
 */
 
 router.get("/", (req, res) => {
-    var files = film.findAllGenerated();
-    return res.status(200).json({ files: files });
+    var films = film.findAllGenerated();
+    return res.status(200).json({ films: films });
 });
 
 /**
