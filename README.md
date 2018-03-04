@@ -28,7 +28,7 @@ In films/clips directory must be the sort films, which will be concatenated in a
 
 ## Imprtant, very important!
 
-You must have previously installed [https://www.ffmpeg.orgf](fmpeg)!
+You must have previously installed [fmpeg](https://www.ffmpeg.orgf)!
 
 ## Available Scripts
 
