@@ -1,4 +1,4 @@
-## FimlPlayer Video Concatenating Service
+## FilmPlayer Video Concatenating Service
 
 It's a web service based on REST with the functionality of concatenate short films. The operation of union short films takes place on the server side, releasing this computer load from the client side, being the server who executes the processing in the cloud.
 
